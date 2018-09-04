@@ -1,5 +1,6 @@
 <template>
   <div>
+    <link rel="stylesheet" type="text/css" href="animate.css">
     <nuxt/>
   </div>
 </template>
@@ -15,6 +16,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background-color: #ffeef9;
 }
 
 * {

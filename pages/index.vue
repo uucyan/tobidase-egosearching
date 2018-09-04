@@ -1,36 +1,34 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        tobidase-egosearching
-      </h1>
-      <h2 class="subtitle">
-        とびだせ エゴサーチ
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-        <el-button type="primary" icon="el-icon-search">Search</el-button>
-      </div>
-    </div>
-  </section>
+<section class="container">
+  <!-- <div class="background"> -->
+  <div>
+    <img src='@/static/logo_and_pasupare.png' alt="ガルパピコ パスパレ" class="logo2 animated bounceIn"/>
+  </div>
+  <!-- <div class="title">
+    <img src='@/static/logo-and-pasupare.png' alt="ガルパピコ パスパレ" class=""/> -->
+    <!-- <div class="logo">
+      <img src='@/static/piko-pasupare.png' alt="ガルパピコ パスパレ" class="piko-pasupare"/>
+    </div> -->
+    <!-- <div class="piko-pasupare">
+      <img src='@/static/tobidase-egosearching-logo.png' alt="ガルパピコ パスパレ" class="logo"/>
+    </div> -->
+    <!-- <img src='@/static/tobidase-egosearching-logo.png' alt="ロゴ" class="logo"/> -->
+    <!-- <img src='@/static/piko-pasupare.png' alt="ガルパピコ パスパレ" class="piko-pasupare"/> -->
+    <!-- <h1 class="title">
+      とびだせ
+    </h1>
+    <h1 class="title">
+      エゴサーチ
+    </h1> -->
+    <!-- <h2 class="subtitle">
+      とびだせ エゴサーチ
+    </h2> -->
+    <!-- <el-button type="primary" icon="el-icon-search">Search</el-button> -->
+</section>
 </template>
 
 <script>
-import AppLogo from "~/components/AppLogo.vue";
-
-export default {
-  components: {
-    AppLogo
-  }
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>
@@ -40,28 +38,79 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-direction: column;
+  // padding: 52.5% 0 0;
+  background: url("/background.jpg") center center / cover no-repeat fixed;
+  // background-size: cover;
+  // background-size: auto 100vh;
+  // width: 100%;
+  // padding-top: 20%;
 }
 
 .title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+  position: relative;
+  // text-align: center;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.background {
+  // width: 100%;
+  // margin: 68px 0 0;
+  padding: 52.5% 0 0;
+  background: url("/background.jpg") 0 0 no-repeat;
+  background-size: cover;
+  // position: relative;
 }
 
-.links {
-  padding-top: 15px;
+.logo2 {
+  // background-size: cover;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // text-align: center;
+  // margin: 0 auto;
+  width: 100%;
 }
+
+.logo {
+  // padding: 52.5% 0 0;
+  // background: url("/tobidase-egosearching-logo.png") 0 0 no-repeat;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // text-align: center;
+  // margin: 0 auto;
+  // width: 100%;
+  // background: url("/tobidase-egosearching-logo.png") 0 0 no-repeat;
+  // top: 50pt;
+  // left: 50%;
+  // background-size: cover;
+  position: absolute;
+}
+
+.piko-pasupare {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  background: url("/piko-pasupare.png") 0 0 no-repeat;
+  background-size: cover;
+  // width: 100%;
+  // position: absolute;
+  position: relative;
+  // top: 0%;
+  // left: 0%;
+}
+
+// .idx-Keyvisual_Logo {
+//   width: 32.13542%;
+//   position: absolute;
+//   top: 23.71032%;
+//   left: 33.95833%;
+//   -webkit-transform: scale(0);
+//   -ms-transform: scale(0);
+//   transform: scale(0);
+//   -webkit-backface-visibility: hidden;
+//   backface-visibility: hidden;
+// }
 </style>
