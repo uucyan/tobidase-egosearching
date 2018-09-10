@@ -1,7 +1,13 @@
 <template>
-<section class="container">
+<section class="container animated bounceIn">
   <div>
-    <img src='@/static/logo.png' alt="とびだせ エゴサーチ！" class="logo animated bounceIn"/>
+    <nuxt-link to="/egosearch">
+      <img
+        src='@/static/logo.png'
+        alt="とびだせ エゴサーチ！"
+        class="logo animated bounceIn"
+      />
+    </nuxt-link>
   </div>
 </section>
 </template>
@@ -18,7 +24,15 @@ export default {};
   align-items: center;
   text-align: center;
   flex-direction: column;
-  background: url("/background.jpg") center center / cover no-repeat fixed;
+  background: url("/top_background_pc.png") center center / cover no-repeat
+    fixed;
+  @media screen and (max-width: 1080px) {
+    // background: url("/top_background_phone.png") center no-repeat;
+    background: url("/top_background_phone.png") center center / cover no-repeat
+      fixed;
+    // background-size: 100% 100%;
+    // background-size: 50% 100%;
+  }
 }
 
 .logo {
