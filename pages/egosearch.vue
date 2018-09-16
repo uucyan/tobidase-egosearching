@@ -83,10 +83,14 @@ export default {
 }
 
 .tv-on {
-  background: url("/egosearch_background_pc.png") center center / cover
+  background: url("/egosearch_background_pc_tv_on.png") center center / cover
     no-repeat fixed;
+  @media screen and (max-width: 1100px) {
+    background: url("/egosearch_background_tablet_tv_on.png") center center / cover
+      no-repeat;
+  }
   @media screen and (max-width: 760px) {
-    background: url("/egosearch_background_phone.png") center center / cover
+    background: url("/egosearch_background_phone_tv_on.png") center center / cover
       no-repeat;
   }
 }
@@ -94,6 +98,10 @@ export default {
 .tv-off {
   background: url("/egosearch_background_pc_tv_off.png") center center / cover
     no-repeat fixed;
+  @media screen and (max-width: 1100px) {
+    background: url("/egosearch_background_tablet_tv_off.png") center center / cover
+      no-repeat;
+  }
   @media screen and (max-width: 760px) {
     background: url("/egosearch_background_phone_tv_off.png") center center / cover
       no-repeat;
@@ -119,11 +127,16 @@ export default {
   //   width: 600px;
   //   position: static;
   // }
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 1100px) {
     padding-bottom: 30%;
     width: 90%;
     position: static;
   }
+  // @media screen and (max-width: 760px) {
+  //   padding-bottom: 30%;
+  //   width: 90%;
+  //   position: static;
+  // }
   // @media screen and (max-width: 430px) {
   //   padding-bottom: 30%;
   //   width: 90%;
