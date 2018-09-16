@@ -4,7 +4,7 @@ module.exports = {
    */
   mode: 'spa',
   head: {
-    title: 'tobidase-egosearching',
+    title: 'とびだせ エゴサーチ！',
     meta: [{
         charset: 'utf-8'
       },
@@ -15,7 +15,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'とびだせ エゴサーチ'
+        content: 'とびだせ エゴサーチ！'
       }
     ],
     link: [{
