@@ -1,6 +1,11 @@
 <template>
 <section class="container">
   <div class="search-form">
+    <img
+      src='@/static/egoogle.png'
+      alt="Egoogle"
+      class="search-logo"
+    />
     <el-input placeholder="" v-model="searchWord" class="input-with-select">
       <el-select v-model="searchUrl" slot="prepend" placeholder="" class="select-box">
         <el-option v-for="(value, key) in searchTargets" :key="key" :label="key" :value="value"></el-option>
@@ -67,6 +72,8 @@ export default {
 
 .search-form {
   // width: 600px;
+  top: 35%;
+  bottom: 50%;
   left: 18%;
   right: 36%;
   // left: 18%;
@@ -83,12 +90,21 @@ export default {
   //   position: static;
   // }
   @media screen and (max-width: 760px) {
-    width: 80%;
-    position: static;
-  }
-  @media screen and (max-width: 430px) {
+    padding-bottom: 30%;
     width: 90%;
     position: static;
+  }
+  // @media screen and (max-width: 430px) {
+  //   padding-bottom: 30%;
+  //   width: 90%;
+  //   position: static;
+  // }
+}
+
+.search-logo {
+  margin-bottom: 30px;
+  @media screen and (max-width: 320px) {
+    width: 100%;
   }
 }
 
@@ -96,10 +112,15 @@ export default {
   width: 100px;
   // background-color: #ff9fca;
   // color: #fff;
+   @media screen and (max-width: 200px) {
+    width: 100%;
+  }
 }
 
 .search-button {
-  background-color: #ff9fca;
+  @media screen and (max-width: 200px) {
+    width: 100%;
+  }
 }
 
 // .el-select .el-input {
