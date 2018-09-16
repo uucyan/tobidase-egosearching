@@ -4,11 +4,21 @@
     <img
       src='@/static/egoogle.png'
       alt="Egoogle"
-      class="search-logo"
-    />
+      class="search-logo"/>
     <el-input placeholder="" v-model="searchWord" class="input-with-select">
       <el-select v-model="searchUrl" slot="prepend" placeholder="" class="select-box">
-        <el-option v-for="(value, key) in searchTargets" :key="key" :label="key" :value="value"></el-option>
+        <!-- <el-option v-for="(value, key) in searchTargets" :key="key" :label="key" :value="value"></el-option> -->
+        <el-option-group
+          v-for="group in searchTargets"
+          :key="group.label"
+          :label="group.label">
+          <el-option
+            v-for="item in group.options"
+            :key="item.label"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-option-group>
       </el-select>
       <el-button slot="append" icon="el-icon-search" @click="searchByTarget"></el-button>
     </el-input>
@@ -23,25 +33,66 @@ export default {
       isShowSearchForm: false,
       searchWord: "丸山 彩",
       searchUrl: "",
-      searchTargets: {
-        Google: 'https://www.google.co.jp/search?q=',
-        Twitter: 'https://twitter.com/search?q=',
-        Mastodon: 'http://mastodonsearch.jp/cross/?q=',
-        Yahoo: 'https://search.yahoo.co.jp/search?ei=UTF-8&p=',
-        Bing: 'https://www.bing.com/search?q=',
-        DuckDuckGo: 'https://duckduckgo.com/?q=',
-        Qwant: 'https://www.qwant.com/?q=',
-        Yandex: 'https://yandex.com/search/?text=',
-      }
+      searchTargets: [{
+        label: 'SNS',
+        options: [{
+          label: 'Twitter',
+          value: 'https://twitter.com/search?q='
+        }, {
+          label: 'Mastodon',
+          value: 'http://mastodonsearch.jp/cross/?q='
+        }, {
+          label: 'Instagram',
+          value: 'https://www.instagram.com/explore/tags/'
+        }]
+      }, {
+        label: '検索エンジン',
+        options: [{
+          label: 'Google',
+          value: 'https://www.google.co.jp/search?q='
+        }, {
+          label: 'Yahoo',
+          value: 'https://search.yahoo.co.jp/search?ei=UTF-8&p='
+        }, {
+          label: 'Bing',
+          value: 'https://www.bing.com/search?q='
+        }, {
+          label: 'DuckDuckGo',
+          value: 'https://duckduckgo.com/?q='
+        }, {
+          label: 'Qwant',
+          value: 'https://www.qwant.com/?q='
+        }, {
+          label: 'Yandex',
+          value: 'https://yandex.com/search/?text='
+        }]
+      }],
+      // searchTargets: {
+      //   Google: 'https://www.google.co.jp/search?q=',
+      //   Twitter: 'https://twitter.com/search?q=',
+      //   Mastodon: 'http://mastodonsearch.jp/cross/?q=',
+      //   Yahoo: 'https://search.yahoo.co.jp/search?ei=UTF-8&p=',
+      //   Bing: 'https://www.bing.com/search?q=',
+      //   DuckDuckGo: 'https://duckduckgo.com/?q=',
+      //   Qwant: 'https://www.qwant.com/?q=',
+      //   Yandex: 'https://yandex.com/search/?text=',
+      // }
     };
   },
   created: function() {
-    this.searchUrl = this.searchTargets.Google
+    // Googleを初期値にする
+    this.searchUrl = this.searchTargets[1].options[0].value
+    // 1.3秒後にテレビをON状態にする
     setTimeout(this.tvOn, 1300)
   },
   methods: {
     searchByTarget() {
-      window.open(this.searchUrl + this.searchWord)
+      let word = this.searchWord
+      // Instagram の場合は半角全角スペースを削除する
+      if (this.searchUrl == 'https://www.instagram.com/explore/tags/') {
+        word = word.replace(/\s+/g, "")
+      }
+      window.open(this.searchUrl + word)
     },
     tvOn() {
       let continer = document.getElementById('continer')
@@ -152,7 +203,7 @@ export default {
 }
 
 .select-box {
-  width: 100px;
+  width: 120px;
   // background-color: #ff9fca;
   // color: #fff;
    @media screen and (max-width: 200px) {
