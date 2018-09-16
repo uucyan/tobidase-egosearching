@@ -27,11 +27,8 @@ export default {};
   background: url("/top_background_pc.png") center center / cover no-repeat
     fixed;
   @media screen and (max-width: 1080px) {
-    // background: url("/top_background_phone.png") center no-repeat;
     background: url("/top_background_phone.png") center center / cover no-repeat
       fixed;
-    // background-size: 100% 100%;
-    // background-size: 50% 100%;
   }
 }
 
