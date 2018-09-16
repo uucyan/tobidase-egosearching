@@ -1,6 +1,6 @@
 <template>
-<section class="container">
-  <div class="search-form">
+<section id="continer" class="container tv-off">
+  <div v-if="isShowSearchForm" class="search-form">
     <img
       src='@/static/egoogle.png'
       alt="Egoogle"
@@ -20,6 +20,7 @@
 export default {
   data() {
     return {
+      isShowSearchForm: false,
       searchWord: "丸山 彩",
       searchUrl: "",
       searchTargets: {
@@ -36,10 +37,16 @@ export default {
   },
   created: function() {
     this.searchUrl = this.searchTargets.Google
+    setTimeout(this.tvOn, 1300)
   },
   methods: {
     searchByTarget() {
-      window.open(this.searchUrl + this.searchWord);
+      window.open(this.searchUrl + this.searchWord)
+    },
+    tvOn() {
+      let continer = document.getElementById('continer')
+      continer.className = 'container tv-on'
+      this.isShowSearchForm = true
     }
   }
 };
@@ -56,17 +63,40 @@ export default {
   // background: url("/background_piko_pasupare_tv.png") center center / cover
   //   no-repeat fixed;
   // background: url("/egosearch_background_pc.png") center no-repeat;
-  background: url("/egosearch_background_pc.png") center center / cover
-    no-repeat fixed;
+
+  // これ使ってた
+  // background: url("/egosearch_background_pc.png") center center / cover
+  //   no-repeat fixed;
+
   // background: url("/egosearch_background_pc.png") center center no-repeat;
   // background-size: 100% 100%;
   // background-size: 100% 100%;
   // max-height: 80%;
+
+  // @media screen and (max-width: 760px) {
+  //   // background: url("/egosearch_background_phone.png") center no-repeat;
+  //   background: url("/egosearch_background_phone.png") center center / cover
+  //     no-repeat;
+  //   // background-size: 100% 100%;
+  // }
+
+}
+
+.tv-on {
+  background: url("/egosearch_background_pc.png") center center / cover
+    no-repeat fixed;
   @media screen and (max-width: 760px) {
-    // background: url("/egosearch_background_phone.png") center no-repeat;
     background: url("/egosearch_background_phone.png") center center / cover
       no-repeat;
-    // background-size: 100% 100%;
+  }
+}
+
+.tv-off {
+  background: url("/egosearch_background_pc_tv_off.png") center center / cover
+    no-repeat fixed;
+  @media screen and (max-width: 760px) {
+    background: url("/egosearch_background_phone_tv_off.png") center center / cover
+      no-repeat;
   }
 }
 
