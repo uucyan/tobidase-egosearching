@@ -2,7 +2,7 @@
 <section id="continer" class="container tv-off">
   <div v-show="isShowSearchForm" class="search-form">
     <img
-      src='@/static/egoogle.png'
+      src='/egoogle.png'
       alt="Egoogle"
       class="search-logo"/>
     <el-input placeholder="" v-model="searchWord" class="input-with-select">
