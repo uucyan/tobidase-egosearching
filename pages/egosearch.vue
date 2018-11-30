@@ -27,6 +27,19 @@
 
 <script>
 export default {
+  head () {
+    return {
+      link: [
+        { rel: 'preload', href: '/egosearch_background_pc_tv_on.png', as: 'image' },
+        { rel: 'preload', href: '/egosearch_background_tablet_tv_on.png', as: 'image' },
+        { rel: 'preload', href: '/egosearch_background_phone_tv_on.png', as: 'image' },
+        { rel: 'preload', href: '/egosearch_background_pc_tv_off.png', as: 'image' },
+        { rel: 'preload', href: '/egosearch_background_tablet_tv_off.png', as: 'image' },
+        { rel: 'preload', href: '/egosearch_background_phone_tv_off.png', as: 'image' },
+        { rel: 'preload', href: '/egoogle.png', as: 'image' },
+      ]
+    }
+  },
   data() {
     return {
       isShowSearchForm: false,

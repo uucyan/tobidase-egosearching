@@ -15,8 +15,12 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'とびだせ エゴサーチ！'
-      }
+        content: 'ガルパピコの第一話で紹介される、丸山 彩の二つ名「とびだせ エゴサーチ」をテーマにしたネタサイトです🎨'
+      },
+      {
+        name: 'keywords',
+        content: 'ガルパ ピコ,ガルパピコ,バンドリ,BanG Dream!,丸山彩,丸山 彩,エゴサ'
+      },
     ],
     link: [{
       rel: 'icon',
@@ -27,8 +31,13 @@ module.exports = {
   /*
    ** Customize the progress bar color
    */
-  loading: {
-    color: '#3B8070'
+  // loading: {
+  //   // color: '#3B8070',
+  // },
+  loadingIndicator: {
+    name: 'chasing-dots',
+    color: '#FFA2C3',
+    background: 'white'
   },
   /*
    ** Build configuration
@@ -37,11 +46,21 @@ module.exports = {
     /*
      ** Run ESLint on save
      */
-    extend(config, {
-      isDev,
-      isClient
-    }) {
-      if (isDev && isClient) {
+    // extend(config, {
+    //   isDev,
+    //   isClient
+    // }) {
+    //   if (isDev && isClient) {
+    //     config.module.rules.push({
+    //       enforce: 'pre',
+    //       test: /\.(js|vue)$/,
+    //       loader: 'eslint-loader',
+    //       exclude: /(node_modules)/
+    //     })
+    //   }
+    // },
+    extend(config) {
+      if (process.server && process.browser) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,

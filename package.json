@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",
-    "element-ui": "^2.4.6",
-    "nuxt": "^1.0.0"
+    "element-ui": "^2.4.11",
+    "nuxt": "^2.3.4"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
