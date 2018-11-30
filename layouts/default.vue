@@ -1,6 +1,6 @@
 <template>
 <div>
-  <link rel="stylesheet" type="text/css" href="animate.css">
+  <link rel="stylesheet" type="text/css" href="./animate.css">
   <nuxt/>
 </div>
 </template>

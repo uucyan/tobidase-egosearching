@@ -22,11 +22,10 @@ module.exports = {
         content: 'ガルパ ピコ,ガルパピコ,バンドリ,BanG Dream!,丸山彩,丸山 彩,エゴサ'
       },
     ],
-    link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
-    }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preload', as: 'style', href: '/animate.css' },
+    ]
   },
   /*
    ** Customize the progress bar color

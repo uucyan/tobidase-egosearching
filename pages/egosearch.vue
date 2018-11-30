@@ -1,6 +1,6 @@
 <template>
 <section id="continer" class="container tv-off">
-  <div v-if="isShowSearchForm" class="search-form">
+  <div v-show="isShowSearchForm" class="search-form">
     <img
       src='@/static/egoogle.png'
       alt="Egoogle"
