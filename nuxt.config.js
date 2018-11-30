@@ -24,15 +24,12 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'preload', as: 'style', href: '/animate.css' },
+      { rel: 'stylesheet', href: 'animate.min.css' },
     ]
   },
   /*
    ** Customize the progress bar color
    */
-  // loading: {
-  //   // color: '#3B8070',
-  // },
   loadingIndicator: {
     name: 'chasing-dots',
     color: '#FFA2C3',
@@ -45,19 +42,6 @@ module.exports = {
     /*
      ** Run ESLint on save
      */
-    // extend(config, {
-    //   isDev,
-    //   isClient
-    // }) {
-    //   if (isDev && isClient) {
-    //     config.module.rules.push({
-    //       enforce: 'pre',
-    //       test: /\.(js|vue)$/,
-    //       loader: 'eslint-loader',
-    //       exclude: /(node_modules)/
-    //     })
-    //   }
-    // },
     extend(config) {
       if (process.server && process.browser) {
         config.module.rules.push({

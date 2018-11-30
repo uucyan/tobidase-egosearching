@@ -1,11 +1,11 @@
 <template>
-<section class="container animated bounceIn">
+<section class="container animated bounceIn delay">
   <div>
     <nuxt-link to="/egosearch">
       <img
-        src='@/static/logo.png'
+        src='/logo.png'
         alt="とびだせ エゴサーチ！"
-        class="logo animated bounceIn"
+        class="logo"
       />
     </nuxt-link>
   </div>
@@ -17,9 +17,10 @@ export default {
   head () {
     return {
       link: [
+        { rel: 'preload', as: 'style', href: '/animate.min.css' },
+        { rel: 'preload', href: '/logo.png', as: 'image' },
         { rel: 'preload', href: '/top_background_pc.png', as: 'image' },
         { rel: 'preload', href: '/top_background_phone.png', as: 'image' },
-        { rel: 'preload', href: '/logo.png', as: 'image' },
       ]
     }
   }
@@ -44,5 +45,9 @@ export default {
 
 .logo {
   width: 100%;
+}
+
+.delay {
+  animation-delay: 0.3s;
 }
 </style>
