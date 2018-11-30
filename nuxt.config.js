@@ -15,8 +15,12 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'とびだせ エゴサーチ！'
-      }
+        content: 'ガルパピコの第一話で紹介される、丸山 彩の二つ名「とびだせ エゴサーチ」をテーマにしたネタサイトです🎨'
+      },
+      {
+        name: 'keywords',
+        content: 'ガルパ ピコ,ガルパピコ,バンドリ,BanG Dream!,丸山彩,丸山 彩,エゴサ'
+      },
     ],
     link: [{
       rel: 'icon',
