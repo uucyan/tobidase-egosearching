@@ -13,7 +13,17 @@
 </template>
 
 <script>
-export default {};
+export default {
+  head () {
+    return {
+      link: [
+        { rel: 'preload', href: '/top_background_pc.png', as: 'image' },
+        { rel: 'preload', href: '/top_background_phone.png', as: 'image' },
+        { rel: 'preload', href: '/logo.png', as: 'image' },
+      ]
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
