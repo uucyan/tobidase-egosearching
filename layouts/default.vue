@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class='background'>
   <nuxt/>
 </div>
 </template>
@@ -25,6 +25,51 @@ html {
   &:after {
     box-sizing: border-box;
     margin: 0;
+  }
+}
+
+.background {
+  background-position: 0 0;
+  animation: bgroop 20s linear infinite;
+  -webkit-animation: bgroop 20s linear infinite;
+  -moz-animation: bgroop 20s linear infinite;
+  background: url("/top_background_pc.png") repeat-y;
+  @media screen and (max-width: 1080px) {
+    background: url("/top_background_phone.png") repeat-y;
+  }
+}
+
+@-webkit-keyframes bgroop {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -946px;
+    @media screen and (max-width: 1080px) {
+      background-position: 0 -1920px;
+    }
+  }
+}
+@keyframes bgroop {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -946px;
+    @media screen and (max-width: 1080px) {
+      background-position: 0 -1920px;
+    }
+  }
+}
+@-moz-keyframes bgroop {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -946px;
+    @media screen and (max-width: 1080px) {
+      background-position: 0 -1920px;
+    }
   }
 }
 </style>
