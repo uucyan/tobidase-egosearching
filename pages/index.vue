@@ -1,14 +1,12 @@
 <template>
-<section class="container animated bounceIn delay">
-  <div>
-    <nuxt-link to="/egosearch">
-      <img
-        src='/logo.png'
-        alt="とびだせ エゴサーチ！"
-        class="logo"
-      />
-    </nuxt-link>
-  </div>
+<section class="container">
+  <nuxt-link to="/egosearch">
+    <img
+      src='/logo.png'
+      alt="とびだせ エゴサーチ！"
+      class="logo animated bounceIn delay"
+    />
+  </nuxt-link>
 </section>
 </template>
 
@@ -23,7 +21,11 @@ export default {
         { rel: 'preload', href: '/top_background_phone.png', as: 'image' },
       ]
     }
-  }
+  },
+  // transition: {
+  //   name: 'zoom',
+  //   enterActiveClass: 'animated bounceIn',
+  // },
 };
 </script>
 
@@ -35,12 +37,6 @@ export default {
   align-items: center;
   text-align: center;
   flex-direction: column;
-  background: url("/top_background_pc.png") center center / cover no-repeat
-    fixed;
-  @media screen and (max-width: 1080px) {
-    background: url("/top_background_phone.png") center center / cover no-repeat
-      fixed;
-  }
 }
 
 .logo {
